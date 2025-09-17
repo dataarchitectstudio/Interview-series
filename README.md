@@ -1,4 +1,14 @@
-# 🚀 How to Explain a Data Engineering Project in Interviews  
+# 🚀 How to Explain a Data Engineering Project in Interviews 🚀
+## ⚡ Below is the Answer for Above Project
+💡 In my recent project, I built a customer analytics platform to create a 360° customer view for marketing teams. We ingested data from 6 different sources like Salesforce, SAP, clickstream logs, and payment gateway into ADLS. The solution followed the Medallion architecture — where bronze held raw data, silver had cleaned and curated data, and gold contained business-ready datasets. Processing was done in Databricks with Delta Lake, and the final data was loaded into Snowflake for Power BI dashboards.
+
+I designed and developed 12 ETL pipelines. For example, a Customer Master pipeline that processed ~50GB daily from Salesforce, a Clickstream streaming pipeline handling ~200GB/day in near real-time, and a Payment Reconciliation pipeline combining ERP and payment data. My responsibilities included building PySpark jobs, optimizing joins and partitions for performance, and implementing incremental Delta loads. The entire flow was unit tested, orchestrated using Azure Data Factory with CI/CD through Azure DevOps for automated deployments.
+
+On the non-functional side, we ensured **scalability** with auto-scaling Databricks clusters, RBAC and auditing for **security, data quality** checks using Great Expectations, and **monitoring, metrics** with Azure Monitor plus **Slack alerts**. To keep costs low, we used spot instances, auto-terminated idle clusters, and archived cold data. For example, the Customer Master pipeline cost around $5 per run, while the streaming pipeline cost about $20 a day.
+
+Overall, this project cut report generation time by 70% and directly improved marketing campaign ROI by 10%, while ensuring the platform remained secure, scalable, and cost-efficient.
+⚡ Project Explanation keeps the flow  **business goal → architecture → your role → orchestration → non-functional → cost → impact** 
+so it feels like a natural story instead of a list.
 
 ## 💡 Project Overview  
 <img width="902" height="647" alt="1_Customer360" src="https://github.com/user-attachments/assets/55f3a3d1-1343-4627-a237-f840e4ca273f" />
